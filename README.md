@@ -37,7 +37,7 @@ s.connect(function(err){
         if(err) throw err;
         
         // display content in the console
-        console.log(files.map(function(v){return v.Filename}));
+        console.log(files);
         
         // close the connection
         s.close();
