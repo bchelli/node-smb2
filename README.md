@@ -24,26 +24,18 @@ var s = new SMB2({
 , password:'password!'
 });
 
-// negotiate the connection with the server
-s.connect(function(err){
-
+// read the content of the folder
+s.readDir('Windows\\System32', function(err, files){
+    
     // if an error happen => throw it
     if(err) throw err;
-
-    // read the content of the folder
-    s.readDir('Windows\\System32', function(err, files){
-        
-        // if an error happen => throw it
-        if(err) throw err;
-        
-        // display content in the console
-        console.log(files);
-        
-        // close the connection
-        s.close();
-        
-    });
-
+    
+    // display content in the console
+    console.log(files);
+    
+    // close the connection
+    s.close();
+    
 });
 
 ```
