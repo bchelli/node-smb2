@@ -4,7 +4,7 @@
 , "description":"SMB2 Client"
 , "homepage": "https://github.com/bchelli/node-smb2"
 
-, "version":"0.2.0"
+, "version":"0.2.1"
 
 , "engines": [
     "node"
