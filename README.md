@@ -1,5 +1,7 @@
 # SMB2 Client for Node.js
 
+[![NPM version](https://badge.fury.io/js/smb2.png)](http://badge.fury.io/js/smb2) [![Dependency Status](https://david-dm.org/bchelli/node-smb2.png?theme=shields.io)](https://david-dm.org/bchelli/node-smb2)
+
 ## Introduction
 
 This library is a simple implementation of SMB2 for Node.js. It allows you to access a SMB2 share as if you were using the native fs library.
