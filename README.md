@@ -87,6 +87,17 @@ smb2Client.writeFile('path\\to\\my\\file.txt', 'Hello Node', function (err) {
 });
 ```
 
+### smb2Client.mkdir ( path, [mode], callback )
+Asynchronous mkdir(2). No arguments other than a possible exception are given to the completion callback. mode defaults to 0777.
+
+Example:
+```javascript
+smb2Client.mkdir('path\\to\\the\\folder', function (err) {
+    if (err) throw err;
+    console.log('Folder created saved!');
+});
+```
+
 ### smb2Client.exists ( path, callback )
 Test whether or not the given path exists by checking with the file system. Then call the callback argument with either true or false. Example:
 ```javascript
