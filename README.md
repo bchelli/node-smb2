@@ -94,7 +94,18 @@ Example:
 ```javascript
 smb2Client.mkdir('path\\to\\the\\folder', function (err) {
     if (err) throw err;
-    console.log('Folder created saved!');
+    console.log('Folder created!');
+});
+```
+
+### smb2Client.rmdir ( path, callback )
+Asynchronous rmdir(2). No arguments other than a possible exception are given to the completion callback.
+
+Example:
+```javascript
+smb2Client.rmdir('path\\to\\the\\folder', function (err) {
+    if (err) throw err;
+    console.log('Folder deleted!');
 });
 ```
 
