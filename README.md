@@ -107,7 +107,7 @@ smb2Client.exists('path\\to\\my\\file.txt', function (err, exists) {
 });
 ```
 
-### smb2Client.unlinkFile ( path, callback )
+### smb2Client.unlink ( path, callback )
 Asynchronous unlink(2). No arguments other than a possible exception are given to the completion callback.
 ```javascript
 smb2Client.unlink('path\\to\\my\\file.txt', function (err) {
