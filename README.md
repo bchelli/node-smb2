@@ -23,6 +23,7 @@ the parameter ```options``` accepts this list of attributes:
 - ```domain``` (mandatory): the domain of which the user is registred
 - ```username``` (mandatory): the username of the user that access the share
 - ```password``` (mandatory): the password
+- ```port``` (optional): default ```445```, the port of the SMB server
 - ```packetConcurrency``` (optional): default ```20```, the number of simulatanous packet when writting / reading data from the share
 - ```autoCloseTimeout``` (optional): default ```10000```, the timeout in milliseconds before to close the SMB2 session and the socket, if setted to ```0``` the connection will never be closed unless you do it 
 
