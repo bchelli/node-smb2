@@ -12,4 +12,3 @@
 ## Implementation on existing functions
 - support of mode in mkdir
 - support of mode in writeFile
-- refactor lib/smb2.js
