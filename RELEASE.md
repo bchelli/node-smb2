@@ -1,5 +1,8 @@
 # Releases
 
+## 0.2.5
+- BUG FIX: Make MessageId, ProcessId, SessionId unique at the connection level
+
 ## 0.2.4
 - refactor lib/smb2.js: now every single api is in the lib/api folder, connection and message forging has been also externalized under tools
 
