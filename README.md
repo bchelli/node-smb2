@@ -1,6 +1,6 @@
 # SMB2 Client for Node.js
 
-[![NPM version](https://badge.fury.io/js/smb2.png)](http://badge.fury.io/js/smb2) [![Dependency Status](https://david-dm.org/bchelli/node-smb2.png?theme=shields.io)](https://david-dm.org/bchelli/node-smb2) [![Code Climate](https://codeclimate.com/github/bchelli/node-smb2.png)](https://codeclimate.com/github/bchelli/node-smb2)
+[![NPM version](https://badge.fury.io/js/smb2.svg)](http://badge.fury.io/js/smb2) [![Dependency Status](https://david-dm.org/bchelli/node-smb2.svg?theme=shields.io)](https://david-dm.org/bchelli/node-smb2) [![Code Climate](https://codeclimate.com/github/bchelli/node-smb2.svg)](https://codeclimate.com/github/bchelli/node-smb2)
 
 ## Introduction
 
@@ -170,6 +170,3 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/bchelli/node-smb2/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
