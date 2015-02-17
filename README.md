@@ -10,7 +10,9 @@ The development is still at an experimental stage and should not be yet consider
 
 ## Installation
 
-npm install smb2
+```bash
+npm install -S smb2
+```
 
 ## API
 
