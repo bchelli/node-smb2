@@ -2,7 +2,6 @@
 
 ## New functions
 - fs.appendFile(filename, data, [options], callback)
-- fs.rename(oldPath, newPath, callback)
 - fs.chmod(path, mode, callback)
 - fs.stat(path, callback)
 - fs.watchFile(filename, [options], listener)

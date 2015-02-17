@@ -128,6 +128,15 @@ smb2Client.unlink('path\\to\\my\\file.txt', function (err) {
 });
 ```
 
+### smb2Client.rename ( oldPath, newPath, callback )
+Asynchronous rename(2). No arguments other than a possible exception are given to the completion callback.
+```javascript
+smb2Client.rename('path\\to\\my\\file.txt', 'new\\path\\to\\my\\new-file-name.txt', function (err) {
+    if (err) throw err;
+    console.log("file has been renamed");
+});
+```
+
 ### smb2Client.close ( )
 This function will close the open connection if opened, it will be called automatically after ```autoCloseTimeout``` ms of no SMB2 call on the server.
 

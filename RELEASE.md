@@ -1,5 +1,8 @@
 # Releases
 
+## 0.2.6
+- fs.rename(oldPath, newPath, callback)
+
 ## 0.2.5
 - BUG FIX: Make MessageId, ProcessId, SessionId unique at the connection level
 
