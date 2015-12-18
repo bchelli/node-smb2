@@ -1,7 +1,7 @@
 {
-  "name": "smb2",
+  "name": "@marsaud/smb2",
   "description": "SMB2 Client",
-  "homepage": "https://github.com/bchelli/node-smb2",
+  "homepage": "https://github.com/marsaud/node-smb2",
   "version": "0.2.6",
   "engines": [
     "node"
@@ -11,10 +11,13 @@
     "email": "benjamin@chelli.net",
     "url": "https://github.com/bchelli"
   },
+  "contributors": [
+    "Fabrice Marsaud <fabrice.marsaud@vates.fr> (https://github.com/marsaud)"
+  ],
   "main": "lib/smb2.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bchelli/node-smb2"
+    "url": "https://github.com/marsaud/node-smb2"
   },
   "dependencies": {
     "ntlm": "~0.1.1"
@@ -28,7 +31,8 @@
     "Samba"
   ],
   "scripts": {
-    "build": "./node_modules/.bin/babel --source-maps --out-dir=lib/api/ lib/api/src"
+    "build": "./node_modules/.bin/babel --source-maps --out-dir=lib/api/ lib/api/src",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "babel": "^5.8.34",
@@ -37,5 +41,6 @@
   },
   "standard": {
     "parser": "babel-eslint"
-  }
+  },
+  "license": "MIT"
 }
