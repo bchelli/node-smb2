@@ -1,5 +1,8 @@
 # Releases
 
+## 0.4.0
+- smb2.ensureDir
+
 ## 0.3.1
 - smb2.createReadStream
 - smb2.createWriteSTream

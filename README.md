@@ -154,7 +154,7 @@ smb2Client.createReadStream('path\\to\\the\\file', function (err, readStream) {
 });
 ```
 
-### smb2Client.createWtiteStream ( fileName, [options], callback )
+### smb2Client.createWriteStream ( fileName, [options], callback )
 Returns a write stream on the file. Unlike fs.createWriteStream, this function is asynchronous, as we need use asynchronous smb requests to get the stream.
 
 Example:
@@ -165,6 +165,8 @@ smb2Client.createWriteStream('path\\to\\the\\file', function (err, readStream) {
     readStream.pipe(writeStream)
 });
 ```
+### smb2Client.ensureDir ( path, callback )
+Ensures that the directory exists. If the directory structure does not exist, it is created.
 
 ## References
 
