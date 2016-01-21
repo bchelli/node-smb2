@@ -1,3 +1,5 @@
 src
 .*
 *.map
+test
+log
