@@ -142,6 +142,10 @@ smb2Client.rename('path\\to\\my\\file.txt', 'new\\path\\to\\my\\new-file-name.tx
 ### smb2Client.close ( )
 This function will close the open connection if opened, it will be called automatically after ```autoCloseTimeout``` ms of no SMB2 call on the server.
 
+## Contributors
+- [Benjamin Chelli](https://github.com/bchelli)
+- [Fabrice Marsaud](https://github.com/marsaud)
+
 ## References
 
     The[MS-SMB2]: Server Message Block (SMB) Protocol Versions 2 and 3
