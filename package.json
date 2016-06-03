@@ -20,6 +20,7 @@
     "url": "https://github.com/marsaud/node-smb2"
   },
   "dependencies": {
+    "babel-runtime": "^5.8.34",
     "ntlm": "~0.1.1"
   },
   "keywords": [
@@ -37,7 +38,6 @@
   "devDependencies": {
     "babel": "^5.8.34",
     "babel-eslint": "^4.1.6",
-    "babel-runtime": "^5.8.34",
     "source-map-support": "^0.4.0",
     "standard": "^5.4.1"
   },
