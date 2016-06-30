@@ -168,6 +168,10 @@ smb2Client.createWriteStream('path\\to\\the\\file', function (err, readStream) {
 ### smb2Client.ensureDir ( path, callback )
 Ensures that the directory exists. If the directory structure does not exist, it is created.
 
+## Contributors
+- [Benjamin Chelli](https://github.com/bchelli)
+- [Fabrice Marsaud](https://github.com/marsaud)
+
 ## References
 
     The[MS-SMB2]: Server Message Block (SMB) Protocol Versions 2 and 3
