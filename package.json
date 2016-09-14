@@ -2,7 +2,7 @@
   "name": "@marsaud/smb2",
   "description": "SMB2 Client",
   "homepage": "https://github.com/marsaud/node-smb2",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "engines": [
     "node"
   ],
