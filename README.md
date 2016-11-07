@@ -11,7 +11,7 @@ The development is still at an experimental stage and should not be yet consider
 ## Installation
 
 ```bash
-npm install -S smb2
+npm install -S @marsaud/smb2
 ```
 
 ## API
