@@ -11,7 +11,7 @@ The development is still at an experimental stage and should not be yet consider
 ## Installation
 
 ```bash
-npm install -S smb2
+npm install -S @marsaud/smb2
 ```
 
 ## API
@@ -141,6 +141,32 @@ smb2Client.rename('path\\to\\my\\file.txt', 'new\\path\\to\\my\\new-file-name.tx
 
 ### smb2Client.close ( )
 This function will close the open connection if opened, it will be called automatically after ```autoCloseTimeout``` ms of no SMB2 call on the server.
+
+### smb2Client.createReadStream ( fileName, [options], callback )
+Returns a read stream on the file. Unlike fs.createReadStream, this function is asynchronous, as we need use asynchronous smb requests to get the stream.
+
+Example:
+```javascript
+smb2Client.createReadStream('path\\to\\the\\file', function (err, readStream) {
+    if (err) throw err;
+    var writeStream = fs.createWriteStream('localFile')
+    readStream.pipe(writeStream)
+});
+```
+
+### smb2Client.createWriteStream ( fileName, [options], callback )
+Returns a write stream on the file. Unlike fs.createWriteStream, this function is asynchronous, as we need use asynchronous smb requests to get the stream.
+
+Example:
+```javascript
+smb2Client.createWriteStream('path\\to\\the\\file', function (err, readStream) {
+    if (err) throw err;
+    var readStream = fs.createReadStream('localFile')
+    readStream.pipe(writeStream)
+});
+```
+### smb2Client.ensureDir ( path, callback )
+Ensures that the directory exists. If the directory structure does not exist, it is created.
 
 ## Contributors
 - [Benjamin Chelli](https://github.com/bchelli)
