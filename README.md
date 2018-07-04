@@ -145,6 +145,7 @@ This function will close the open connection if opened, it will be called automa
 ## Contributors
 - [Benjamin Chelli](https://github.com/bchelli)
 - [Fabrice Marsaud](https://github.com/marsaud)
+- [Jay McAliley](https://github.com/jaymcaliley)
 
 ## References
 
