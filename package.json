@@ -34,11 +34,13 @@
   ],
   "scripts": {
     "build": "./node_modules/.bin/babel --source-maps --out-dir=lib/api/ lib/api/src",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "test": "eslint ./lib"
   },
   "devDependencies": {
     "babel": "^5.8.34",
     "babel-eslint": "^4.1.6",
+    "eslint": "^5.0.1",
     "prettier": "^1.13.7",
     "source-map-support": "^0.4.0",
     "standard": "^5.4.1"
