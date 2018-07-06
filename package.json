@@ -3,9 +3,9 @@
   "description": "SMB2 Client",
   "homepage": "https://github.com/marsaud/node-smb2",
   "version": "0.7.2",
-  "engines": [
-    "node"
-  ],
+  "engines": {
+    "node": ">=4"
+  },
   "author": {
     "name": "Benjamin Chelli",
     "email": "benjamin@chelli.net",
