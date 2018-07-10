@@ -139,7 +139,7 @@ smb2Client.rename('path\\to\\my\\file.txt', 'new\\path\\to\\my\\new-file-name.tx
 });
 ```
 
-### smb2Client.close ( )
+### smb2Client.disconnect ( )
 This function will close the open connection if opened, it will be called automatically after ```autoCloseTimeout``` ms of no SMB2 call on the server.
 
 ### smb2Client.createReadStream ( fileName, [options], callback )
@@ -167,6 +167,31 @@ smb2Client.createWriteStream('path\\to\\the\\file', function (err, readStream) {
 ```
 ### smb2Client.ensureDir ( path, callback )
 Ensures that the directory exists. If the directory structure does not exist, it is created.
+
+### Low-level API
+
+```javascript
+smb2Client.open('path\\to\\the\\file', function (err, fd) {
+    if (err) throw err;
+
+    smb2Client.read(
+        Buffer.alloc(10), // buffer where to store the data
+        0,                // offset in the buffer
+        10,               // number of bytes to read
+        0,                // offset in the file
+        function (err, bytesRead, buffer) {
+            smb2Client.close(fd, function () {})
+
+            if (err) throw cb(err)
+            console.log(bytesRead, buffer)
+        }
+    )
+})
+```
+
+> This API is modeled after Node's `fs` module.
+
+> Note: be careful of `autoCloseTimeout` with this process as it is not intended to cover multiple method calls, you should set it to `0` and manually `disconnect()`.
 
 ## Contributors
 - [Benjamin Chelli](https://github.com/bchelli)
