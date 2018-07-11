@@ -1,6 +1,6 @@
 # SMB2 Client for Node.js
 
-[![NPM version](https://badge.fury.io/js/smb2.svg)](http://badge.fury.io/js/smb2) [![Dependency Status](https://david-dm.org/Node-SMB/marsaud-smb2.svg?theme=shields.io)](https://david-dm.org/Node-SMB/marsaud-smb2) [![Code Climate](https://codeclimate.com/github/Node-SMB/marsaud-smb2.svg)](https://codeclimate.com/github/Node-SMB/marsaud-smb2)
+[![npm version](https://badge.fury.io/js/%40marsaud%2Fsmb2.svg)](https://badge.fury.io/js/%40marsaud%2Fsmb2) [![Dependency Status](https://david-dm.org/Node-SMB/marsaud-smb2.svg?theme=shields.io)](https://david-dm.org/Node-SMB/marsaud-smb2)
 
 ## Introduction
 
