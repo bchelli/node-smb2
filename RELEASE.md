@@ -1,5 +1,15 @@
 # Releases
 
+## 0.2.8
+2018-07-04
+- BUG FIX: Use 'open' before set_info when renaming files
+  This fixes an issue where using `smb2Client.rename()` to rename a file
+  results in overwriting the file with empty content before renaming.
+
+## 0.2.7
+2016-01-28
+- BUG FIX: Fixed a bug with 0 autocloseTimeout
+
 ## 0.2.6
 - fs.rename(oldPath, newPath, callback)
 
