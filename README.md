@@ -154,7 +154,7 @@ smb2Client.readFile('path\\to\\my\\file.txt', function(err, content) {
 
 If no encoding is specified, then the raw buffer is returned.
 
-> `smb2Client.rename ( oldPath, newPath, callback )`
+> `smb2Client.rename ( oldPath, newPath, [ options, ] callback )`
 
 Asynchronous `rename(2)`: rename a file.
 
@@ -162,6 +162,22 @@ Asynchronous `rename(2)`: rename a file.
 smb2Client.rename(
   'path\\to\\my\\file.txt',
   'new\\path\\to\\my\\new-file-name.txt',
+  function(err) {
+    if (err) throw err;
+    console.log('file has been renamed');
+  }
+);
+```
+
+Existing files are not replaced by default, you need to pass the `replace: true` option for this use case:
+
+```javascript
+smb2Client.rename(
+  'path\\to\\my\\file.txt',
+  'path\\to\\existing\\file.txt',
+  {
+    replace: true
+  }
   function(err) {
     if (err) throw err;
     console.log('file has been renamed');
