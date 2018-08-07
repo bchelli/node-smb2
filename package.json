@@ -4,7 +4,7 @@
   "homepage": "https://github.com/marsaud/node-smb2",
   "version": "0.8.0",
   "engines": {
-    "node": ">=4"
+    "node": ">=5.10"
   },
   "author": {
     "name": "Benjamin Chelli",
@@ -40,6 +40,7 @@
   "devDependencies": {
     "babel": "^5.8.34",
     "eslint": "^5.0.1",
+    "eslint-plugin-node": "^7.0.1",
     "prettier": "^1.13.7",
     "source-map-support": "^0.4.0"
   },
