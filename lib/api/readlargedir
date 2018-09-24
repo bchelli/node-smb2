@@ -1,0 +1,63 @@
+var SMB2Forge = require('../tools/smb2-forge')
+    , SMB2Request = SMB2Forge.request
+;
+
+/*
+ * readlargedir
+ * =======
+ *
+ * list the file / directory from the path provided:
+ *
+ *  - open the directory
+ *  - query directory content
+ *  - if there is a chance that the whole directory hasn't been listed, send another query.... rinse repeat
+ *  - close the directory
+ *  - note for this to work smb2.js must be updated to include this file.
+ *  - update provided by Zack Coddington (eldrago2@yahoo.com)
+ */
+
+/**
+ * queryDir - recursive querying until all files in a directory have been added to the listing.
+ * @param file
+ * @param connection
+ * @param completeFileListing
+ * @param cb
+ */
+function queryDir(file, connection, completeFileListing, cb) {
+    SMB2Request('query_directory', file, connection, function (err, files) {
+        console.log("amount of files found on this iteration " + files.length);
+        console.log("Total files found so far " +  (completeFileListing.length + files.length));
+        if (err) {
+            cb && cb(err);
+        }
+        // There is a chance that if more then 300 files have been found that the whole directory might not have been listed..
+        // So in that case I will send another request.  Not as efficient as I would like, but it works pretty well.
+        else if (files && (files.length > 300)) {
+            queryDir(file, connection, completeFileListing.concat(files), cb)
+        } else {
+            SMB2Request('close', file, connection, function (err) {
+                cb && cb(
+                    null
+                    , completeFileListing.concat(files)
+                        .map(function (v) {
+                            return v.Filename
+                        }) // get the filename only
+                        .filter(function (v) {
+                            return v != '.' && v != '..'
+                        }) // remove '.' and '..' values
+                );
+            });
+        }
+    })
+}
+
+module.exports = function (path, cb) {
+    var connection = this;
+
+    // SMB2 open directory
+    SMB2Request('open', {path: path}, connection, function (err, file) {
+        if (err) cb && cb(err);
+        // SMB2 query directory
+        else queryDir(file, connection, [], cb);
+    });
+}
