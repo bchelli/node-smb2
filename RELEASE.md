@@ -1,5 +1,18 @@
 # Releases
 
+## 0.2.11
+2018-10-04
+- BUG FIX: Fixed bug on open_folder that was not using the right DesiredAccess
+- BUG FIX: Use open_folder in readdir, this was preventing from reading the root folder
+
+## 0.2.10
+2018-10-04
+- Update NTLM to version 0.1.3
+
+## 0.2.9
+2018-10-03
+- readdir support for large directory
+
 ## 0.2.8
 2018-07-04
 - BUG FIX: Use 'open' before set_info when renaming files
