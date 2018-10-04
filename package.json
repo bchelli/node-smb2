@@ -1,39 +1,30 @@
 {
-
-  "name":"smb2"
-, "description":"SMB2 Client"
-, "homepage": "https://github.com/bchelli/node-smb2"
-
-, "version":"0.2.8"
-
-, "engines": [
+  "name": "smb2",
+  "description": "SMB2 Client",
+  "homepage": "https://github.com/bchelli/node-smb2",
+  "version": "0.2.8",
+  "engines": [
     "node"
-  ]
-
-, "author":{
-    "name": "Benjamin Chelli"
-  , "email": "benjamin@chelli.net"
-  , "url": "https://github.com/bchelli"
-  }
-
-, "main":"lib/smb2.js"
-
-, "repository": {
-    "type": "git"
-  , "url": "https://github.com/bchelli/node-smb2"
-  }
-
-, "dependencies": {
+  ],
+  "author": {
+    "name": "Benjamin Chelli",
+    "email": "benjamin@chelli.net",
+    "url": "https://github.com/bchelli"
+  },
+  "main": "lib/smb2.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bchelli/node-smb2"
+  },
+  "dependencies": {
     "ntlm": "~0.1.1"
-  }
-
-, "keywords": [
-    "SMB"
-  , "SMB2"
-  , "SMB3"
-  , "NTLM"
-  , "CIFS"
-  , "Samba"
+  },
+  "keywords": [
+    "SMB",
+    "SMB2",
+    "SMB3",
+    "NTLM",
+    "CIFS",
+    "Samba"
   ]
-
 }
