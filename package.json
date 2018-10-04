@@ -2,7 +2,7 @@
   "name": "smb2",
   "description": "SMB2 Client",
   "homepage": "https://github.com/bchelli/node-smb2",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "engines": [
     "node"
   ],
