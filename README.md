@@ -173,7 +173,7 @@ smbStream.on('finish', function () {
 });
 ```
 
-Note that when using readable streams, it might make sense to disable auto closing of the SMB2 session by setting the `autoCloseTimeout`to `0`.
+Note that when using writeable streams, it might make sense to disable auto closing of the SMB2 session by setting the `autoCloseTimeout`to `0`.
 
 ### smb2Client.close ( )
 This function will close the open connection if opened, it will be called automatically after ```autoCloseTimeout``` ms of no SMB2 call on the server.
