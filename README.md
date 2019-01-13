@@ -139,6 +139,30 @@ smb2Client.rename('path\\to\\my\\file.txt', 'new\\path\\to\\my\\new-file-name.tx
 });
 ```
 
+### smb2Client.createReadStream ( path )
+Creates a readable stream.
+```javascript
+var smbStream = smb2Client.createReadStream('path\\to\\my\\file.txt');
+smbStream.pipe(fs.createWriteStream('path/to/local/file.txt')):
+smbStream.on('end', function () {
+  console.log('File copied');
+});
+```
+
+Note that when using readable streams, it might make sense to disable auto closing of the SMB2 session by setting the `autoCloseTimeout`to `0`.
+
+### smb2Client.createWriteStream ( path )
+Creates a writeable stream.
+```javascript
+var smbStream = smb2Client.createWriteStream('path\\to\\my\\file.txt');
+fs.createReadStream('path/to/local/file.txt').pipe(smbStream);
+smbStream.on('finish', function () {
+  console.log('File copied');
+});
+```
+
+Note that when using writeable streams, it might make sense to disable auto closing of the SMB2 session by setting the `autoCloseTimeout`to `0`.
+
 ### smb2Client.close ( )
 This function will close the open connection if opened, it will be called automatically after ```autoCloseTimeout``` ms of no SMB2 call on the server.
 
@@ -147,6 +171,7 @@ This function will close the open connection if opened, it will be called automa
 - [Fabrice Marsaud](https://github.com/marsaud)
 - [Jay McAliley](https://github.com/jaymcaliley)
 - [eldrago](https://github.com/eldrago)
+- [Friðjón Guðjohnsen](https://github.com/fridjon)
 
 ## References
 
