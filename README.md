@@ -151,18 +151,6 @@ smbStream.on('end', function () {
 
 Note that when using readable streams, it might make sense to disable auto closing of the SMB2 session by setting the `autoCloseTimeout`to `0`.
 
-### smb2Client.createReadStream ( path )
-Creates a readable stream.
-```javascript
-var smbStream = smb2Client.createReadStream('path\\to\\my\\file.txt');
-smbStream.pipe(fs.createWriteStream('path/to/local/file.txt')):
-smbStream.on('end', function () {
-  console.log('File copied');
-});
-```
-
-Note that when using readable streams, it might make sense to disable auto closing of the SMB2 session by setting the `autoCloseTimeout`to `0`.
-
 ### smb2Client.createWriteStream ( path )
 Creates a writeable stream.
 ```javascript
