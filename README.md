@@ -19,15 +19,15 @@ npm install -S smb2
 ### var smb2Client = new SMB2 ( options )
 The SMB2 class is the constructor of your SMB2 client.
 
-the parameter ```options``` accepts this list of attributes:
+the parameter `options` accepts this list of attributes:
 
-- ```share``` (mandatory): the share you want to access
-- ```domain``` (mandatory): the domain of which the user is registred
-- ```username``` (mandatory): the username of the user that access the share
-- ```password``` (mandatory): the password
-- ```port``` (optional): default ```445```, the port of the SMB server
-- ```packetConcurrency``` (optional): default ```20```, the number of simulatanous packet when writting / reading data from the share
-- ```autoCloseTimeout``` (optional): default ```10000```, the timeout in milliseconds before to close the SMB2 session and the socket, if setted to ```0``` the connection will never be closed unless you do it 
+- `share` (mandatory): the share you want to access
+- `domain` (mandatory): the domain of which the user is registred
+- `username` (mandatory): the username of the user that access the share
+- `password` (mandatory): the password
+- `port` (optional): default `445`, the port of the SMB server
+- `packetConcurrency` (optional): default `20`, the number of simulatanous packet when writting / reading data from the share
+- `autoCloseTimeout` (optional): default `10000`, the timeout in milliseconds before to close the SMB2 session and the socket, if setted to `0` the connection will never be closed unless you do it 
 
 Example:
 ```javascript
@@ -55,10 +55,10 @@ smb2Client.readdir('Windows\\System32', function(err, files){
 ```
 
 ### smb2Client.readFile ( filename, [options], callback )
-- ```filename``` String
-- ```options``` Object
-    - ```encoding``` String | Null default = null
-- ```callback``` Function
+- `filename` String
+- `options` Object
+    - `encoding` String | Null default = null
+- `callback` Function
 
 Asynchronously reads the entire contents of a file. Example:
 ```javascript
@@ -72,11 +72,11 @@ The callback is passed two arguments (err, data), where data is the contents of 
 If no encoding is specified, then the raw buffer is returned.
 
 ### smb2Client.writeFile ( filename, data, [options], callback )
-- ```filename``` String
-- ```data``` String | Buffer
-- ```options``` Object
-    - ```encoding``` String | Null default = 'utf8'
-- ```callback``` Function
+- `filename` String
+- `data` String | Buffer
+- `options` Object
+    - `encoding` String | Null default = 'utf8'
+- `callback` Function
 
 Asynchronously writes data to a file, replacing the file if it already exists. data can be a string or a buffer.
 
@@ -139,23 +139,37 @@ smb2Client.rename('path\\to\\my\\file.txt', 'new\\path\\to\\my\\new-file-name.tx
 });
 ```
 
-### smb2Client.createReadStream ( path )
+### smb2Client.createReadStream ( path, [options] )
+- `path` String
+- `options` Object
+    - `start` Number default = '0'
+    - `end` Number default = 'Inf'
+
 Creates a readable stream.
+`options` can include `start` and `end` values to read a range of bytes from the file instead of the entire file. Both `start` and `end` are inclusive and start counting at 0.
+
 ```javascript
 var smbStream = smb2Client.createReadStream('path\\to\\my\\file.txt');
-smbStream.pipe(fs.createWriteStream('path/to/local/file.txt'));
+smbStream.pipe(fs.createWriteStream('path\\to\\local\\file.txt'));
 smbStream.on('end', function () {
   console.log('File copied');
 });
 ```
 
+An example to read the last 10 bytes of a file which is 100 bytes long:
+
+```javascript
+smb2Client.createReadStream('sample.txt', { start: 90, end: 99 });
+```
+
 Note that when using readable streams, it might make sense to disable auto closing of the SMB2 session by setting the `autoCloseTimeout`to `0`.
+Note that when `start` > file lenght stream fails with error. (`end` still can be greater than file lenght e.g. `Inf`)
 
 ### smb2Client.createWriteStream ( path )
 Creates a writeable stream.
 ```javascript
 var smbStream = smb2Client.createWriteStream('path\\to\\my\\file.txt');
-fs.createReadStream('path/to/local/file.txt').pipe(smbStream);
+fs.createReadStream('path\\to\\local\\file.txt').pipe(smbStream);
 smbStream.on('finish', function () {
   console.log('File copied');
 });
@@ -172,6 +186,7 @@ This function will close the open connection if opened, it will be called automa
 - [Jay McAliley](https://github.com/jaymcaliley)
 - [eldrago](https://github.com/eldrago)
 - [Friðjón Guðjohnsen](https://github.com/fridjon)
+- [Bartłomiej Wierciński](https://github.com/bwiercinski)
 
 ## References
 
