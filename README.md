@@ -143,7 +143,7 @@ smb2Client.rename('path\\to\\my\\file.txt', 'new\\path\\to\\my\\new-file-name.tx
 Creates a readable stream.
 ```javascript
 var smbStream = smb2Client.createReadStream('path\\to\\my\\file.txt');
-smbStream.pipe(fs.createWriteStream('path/to/local/file.txt')):
+smbStream.pipe(fs.createWriteStream('path/to/local/file.txt'));
 smbStream.on('end', function () {
   console.log('File copied');
 });
