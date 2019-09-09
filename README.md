@@ -121,6 +121,15 @@ smb2Client.exists('path\\to\\my\\file.txt', function (err, exists) {
 });
 ```
 
+### smb2Client.stat ( path, callback )
+Returns basic info about a file. Example:
+```javascript
+smb2Client.stat('path\\to\\my\\file.txt', function (err, stats) {
+    if (err) throw err;
+    console.log(`The size of a file is: ${stats.size} byte${stats.size === 1 ? '': 's'}.`);
+});
+```
+
 ### smb2Client.unlink ( path, callback )
 Asynchronous unlink(2). No arguments other than a possible exception are given to the completion callback.
 ```javascript
