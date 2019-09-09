@@ -121,7 +121,7 @@ smb2Client.exists('path\\to\\my\\file.txt', function (err, exists) {
 });
 ```
 
-### smb2Client.exists ( path, callback )
+### smb2Client.stat ( path, callback )
 Returns basic info about a file. Example:
 ```javascript
 smb2Client.stat('path\\to\\my\\file.txt', function (err, stats) {
