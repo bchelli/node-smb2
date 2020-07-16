@@ -89,6 +89,18 @@ smb2Client.writeFile('path\\to\\my\\file.txt', 'Hello Node', function (err) {
     console.log('It\'s saved!');
 });
 ```
+Asynchronously streams data to a file using multiple promises, replacing the file if it already exists. data must be a READ stream.
+
+The encoding option is ignored if data is a buffer. It defaults to 'utf8'.
+
+Example:
+```javascript
+smb2Client.writeFileStream('path\\to\\my\\file.txt', ReadStream, fileSize, function (err) {
+    if (err) throw err;
+    console.log('It\'s saved!');
+});
+```
+
 
 ### smb2Client.mkdir ( path, [mode], callback )
 Asynchronous mkdir(2). No arguments other than a possible exception are given to the completion callback. mode defaults to 0777.
