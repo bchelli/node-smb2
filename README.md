@@ -173,6 +173,10 @@ This function will close the open connection if opened, it will be called automa
     Copyright (C) 2014 Microsoft
     http://msdn.microsoft.com/en-us/library/cc246482.aspx
 
+### Permissions References
+    2.2.13.1.2 Directory_Access_Mask
+    https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-smb2/0a5934b1-80f1-4da0-b1bf-5e021c309b71
+
 ## License
 
 (The MIT License)
