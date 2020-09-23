@@ -1,20 +1,20 @@
 {
-  "name": "smb2",
+  "name": "@moe-tech/smb2",
   "description": "SMB2 Client",
-  "homepage": "https://github.com/bchelli/node-smb2",
+  "homepage": "https://github.com/mutual-of-enumclaw/node-smb2",
   "version": "0.2.11",
-  "engines": [
-    "node"
-  ],
+  "engines": { 
+    "node": ">= 10.0.0" 
+  },
   "author": {
-    "name": "Benjamin Chelli",
-    "email": "benjamin@chelli.net",
-    "url": "https://github.com/bchelli"
+    "name": "Mutual of Enumclaw",
+    "email": "nkeating@mutualofenumclaw.com",
+    "url": "https://github.com/nkeating-mutualofenumclaw"
   },
   "main": "lib/smb2.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bchelli/node-smb2"
+    "url": "https://github.com/mutual-of-enumclaw/node-smb2"
   },
   "dependencies": {
     "ntlm": "^0.1.3"
